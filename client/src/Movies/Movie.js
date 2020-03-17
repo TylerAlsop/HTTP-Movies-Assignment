@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, NavLink, Link } from 'react-router-dom';
+
 import MovieCard from './MovieCard';
 
 function Movie({ addToSavedList }) {
@@ -36,9 +37,7 @@ function Movie({ addToSavedList }) {
       <div className='save-button' onClick={saveMovie}>
         Add To Saved Movies
       </div>
-      <div className='update-button' >
-        Update Movie Info
-      </div>
+        <Link className='update-button' to="/update-movie/:id">Update Movie Info</Link>
     </div>
   );
 }

@@ -72,10 +72,13 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  text-decoration: none;
 }
 .update-button:hover {
   background-color: green;
   color: white;
+  text-decoration: none;
+
 }
 
 .home-button {
