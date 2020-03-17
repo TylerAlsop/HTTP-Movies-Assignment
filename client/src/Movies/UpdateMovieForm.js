@@ -40,7 +40,7 @@ const UpdateMovieForm = props => {
     e.preventDefault();
     // make a PUT request to edit the movie
     axios
-    //   .put(`http://localhost:3333/movies/${movie.id}`, movie)
+      .put("http://localhost:5000/api/movies/${movie.id}", movie)
       .then(res => {
         console.log(res);
         props.updateMovies(res.data);
