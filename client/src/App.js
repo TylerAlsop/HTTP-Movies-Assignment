@@ -12,7 +12,7 @@ const App = () => {
 
   const getMovieList = () => {
     axios
-      .get("http://localhost:5000/api/movies")
+      .get(`http://localhost:5000/api/movies`)
       .then(res => {
         console.log("Res from getMovieList in App.js", res)
         setMovieList(res.data)
@@ -28,6 +28,9 @@ const App = () => {
     getMovieList();
   }, []);
 
+  console.log("movieList in App.js", movieList)
+
+
   return (
     <>
       <SavedList list={savedList} />
@@ -42,9 +45,9 @@ const App = () => {
 
       <Route 
         path="/update-movie/:id"
-        render={props => (
-          <UpdateMovieForm {...props} movies={movieList} updateMovies={setMovieList} />
-        )}
+        render={props => {
+          return <UpdateMovieForm {...props} movies={movieList} updateMovies={setMovieList} getMovieList={getMovieList} />;
+        }}
       />
     </>
   );
